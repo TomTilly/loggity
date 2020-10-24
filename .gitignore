@@ -9,3 +9,4 @@ _remake-uploads
 !_remake-uploads/.gitkeep
 _remake-data/**/*.json
 .remake
+feedback.md
