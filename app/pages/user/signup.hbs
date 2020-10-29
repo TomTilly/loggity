@@ -1,24 +1,49 @@
 <div class="accounts">
-  <form class="accounts__form" action="/user/signup" method="post">
-    <div class="accounts__heading">Sign up</div>
+  <form class="accounts__form"
+        action="/user/signup"
+        method="post">
+    <h3 class="accounts__heading">Sign up</h3>
+    {{#if flashErrors }}
+    {{#each flashErrors }}
+    <div class="flash flash--error">{{ this }}</div>
+    {{/each}}
+    {{/if}}
+    {{#if flashSuccesses }}
+    {{#each flashSuccesses }}
+    <div class="flash flash--success">{{ this }}</div>
+    {{/each}}
+    {{/if}}
     <div class="text-field">
-      <label class="text-field__label">
-        <span class="text-field__label-text">Username</span>
-        <input class="text-field__input" type="text" name="username" required>
-      </label>
+      <label class="text-field__label"
+             for="username">Username</label>
+      <input class="text-field__input"
+             type="text"
+             name="username"
+             autocomplete="username"
+             id="username"
+             required>
     </div>
     <div class="text-field">
-      <label class="text-field__label">
-        <span class="text-field__label-text">Email</span>
-        <input class="text-field__input" type="email" name="email" required>
-      </label>
+      <label class="text-field__label"
+             for="email">Email</label>
+      <input class="text-field__input"
+             type="email"
+             name="email"
+             autocomplete="email"
+             id="email"
+             required>
     </div>
     <div class="text-field">
-      <label class="text-field__label">
-        <span class="text-field__label-text">Password</span>
-        <input class="text-field__input" type="password" name="password" required>
-      </label>
+      <label class="text-field__label"
+             for="password">Password</label>
+      <input class="text-field__input"
+             type="password"
+             name="password"
+             autocomplete="new-password"
+             id="password"
+             required>
     </div>
-    <button class="button button--large button--account" type="submit">Sign up</button>
+    <button class="btn btn--secondary btn--full-width accounts__submit"
+            type="submit">Sign up</button>
   </form>
 </div>
