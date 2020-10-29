@@ -1,12 +1,19 @@
 <div class="accounts">
-  <form class="accounts__form" action="" method="post">
-    <div class="accounts__heading">Set a New Password</div>
+  <form class="accounts__form"
+        action=""
+        method="post">
+    <h3 class="accounts__heading">Set a New Password</h3>
     <div class="text-field">
-      <label class="text-field__label">
-        <span class="text-field__label-text">New Password</span>
-        <input class="text-field__input" type="password" name="password" required>
-      </label>
+      <label class="text-field__label"
+             for="password">New Password</label>
+      <input class="text-field__input"
+             type="password"
+             name="password"
+             id="password"
+             autocomplete="new-password"
+             required>
     </div>
-    <button class="button button--large button--account" type="submit">Set Password</button>
+    <button class="btn btn--secondary btn--full-width accounts__submit"
+            type="submit">Set Password</button>
   </form>
 </div>
