@@ -1,12 +1,28 @@
 <div class="accounts">
-  <form class="accounts__form" action="/user/forgot" method="post">
+  <form class="accounts__form"
+        action="/user/forgot"
+        method="post">
     <div class="accounts__heading">Forgot Password</div>
+    {{#if flashErrors }}
+    {{#each flashErrors }}
+    <div class="flash flash--error">{{ this }}</div>
+    {{/each}}
+    {{/if}}
+    {{#if flashSuccesses }}
+    {{#each flashSuccesses }}
+    <div class="flash flash--success">{{ this }}</div>
+    {{/each}}
+    {{/if}}
     <div class="text-field">
-      <label class="text-field__label">
-        <span class="text-field__label-text">Username</span>
-        <input class="text-field__input" type="text" name="username" required>
-      </label>
+      <label class="text-field__label"
+             for="username">Username</label>
+      <input class="text-field__input"
+             type="text"
+             name="username"
+             autocomplete="username"
+             required>
     </div>
-    <button class="button button--large button--account" type="submit">Send reset link</button>
+    <button class="btn btn--secondary btn--full-width accounts__submit"
+            type="submit">Send reset link</button>
   </form>
 </div>
