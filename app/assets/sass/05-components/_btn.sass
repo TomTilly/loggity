@@ -1,0 +1,32 @@
+.btn
+  padding: .4em 1.75em
+  border-radius: $border-radius
+  font-size: 1rem
+  text-decoration: none
+  transition: background-color .2s linear
+  cursor: pointer
+  border: 0
+
+.btn--primary
+  color: $btn-primary-text-color
+  background-color: $btn-primary-bg-color
+
+.btn--primary:hover, .btn--primary:focus
+  background-color: $btn-primary-bg-color-hover
+  color: $btn-primary-text-color
+
+.btn--secondary
+  color: $text-primary-light
+  background-color: $accent-green
+
+.btn--secondary:hover, .btn--secondary:focus
+  background-color: $accent-green-light
+
+.btn--lg
+  font-size: 1.3rem
+
+  @include for-tablet-portrait-up
+    font-size: 1.625rem
+
+.btn--full-width
+  width: 100%
