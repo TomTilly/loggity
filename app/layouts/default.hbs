@@ -3,44 +3,53 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
   <title>Taskmin | Minimalist Task Management</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/css/remake.css">
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet"
+        type="text/css"
+        href="/css/remake.css">
+  <link rel="stylesheet"
+        type="text/css"
+        href="/css/main.css">
 </head>
 
 <body>
-  <div class="container">
-    <div class="nav">
-      <a class="logo" href="{{#if currentUser}}/{{currentUser.details.username}}{{else}}/{{/if}}">
-        <img class="logo__image" src="/images/logo.svg">
-        <span class="logo__text">Taskmin <span class="logo__version">v1.0</span></span>
+  <nav class="nav">
+    <div class="nav__container container">
+      <a class="logo"
+         href="{{#if currentUser}}/{{currentUser.details.username}}{{else}}/{{/if}}">
+        <img class="logo__image"
+             src="/images/logo.svg">
+        <span class="logo__text">Taskmin</span>
       </a>
       {{#if currentUser}}
       <div class="nav__user">
-        <div>{{currentUser.details.username}}</div>
-        <a class="nav__button" href="/user/logout">Logout</a>
+        <div>
+          Signed in as
+          <a class="nav__user-link"
+             href="{{currentUser.details.username}}"
+             class="nav__user">{{currentUser.details.username}}
+          </a>
+        </div>
+        <a class="btn btn--primary nav__button"
+           href="/user/logout">Logout</a>
       </div>
       {{else}}
       <div class="nav__user">
-        <a class="nav__button" href="/user/signup">Sign up</a>
-        <a class="nav__button" href="/user/login">Log in</a>
+        <a class="nav__link"
+           href="/user/login">Log in</a>
+        <a class="btn btn--primary nav__button"
+           href="/user/signup">Sign up</a>
       </div>
       {{/if}}
     </div>
-    {{#if flashErrors }}
-    {{#each flashErrors }}
-    <div class="flash flash--error">{{ this }}</div>
-    {{/each}}
-    {{/if}}
-    {{#if flashSuccesses }}
-    {{#each flashSuccesses }}
-    <div class="flash flash--success">{{ this }}</div>
-    {{/each}}
-    {{/if}}
+  </nav>
+  <main>
     {{> yield }}
-  </div>
+  </main>
   {{#if isPageAuthor}}
   {{!-- Prevent loading the Remake framework if the page isn't editable --}}
   <script src="/js/remake-init.js"></script>
