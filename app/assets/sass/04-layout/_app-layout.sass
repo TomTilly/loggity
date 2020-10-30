@@ -1,0 +1,29 @@
+.dashboard
+  display: flex
+  @include for-tablet-landscape-up
+
+.projects-col
+  width: 100%
+  background-color: $dashboard-left-col-bg
+  padding: $vertical-spacing 0 $vertical-spacing $side-spacing
+  overflow: scroll
+  flex-shrink: 0
+
+  @include for-tablet-landscape-up
+    position: static
+    width: 40%
+
+.tasks-col
+  width: 100%
+  transform: translateX(-100%)
+  background-color: $dashboard-right-col-bg
+  padding: $vertical-spacing $side-spacing $vertical-spacing $side-spacing
+  transition: transform .5 ease-in
+  flex-shrink: 0
+
+  @include for-tablet-landscape-up
+    position: static
+    width: 60%
+
+.projects-col--active + .tasks-col
+  transform: translateX(0)

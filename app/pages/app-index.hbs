@@ -1,73 +1,82 @@
-<div class="header">
-  <div 
-    class="header__text"
-    data-o-type="object"
-    data-l-key-board-heading
-    data-o-default-board-heading="My Projects"
-    data-i-editable-without-remove
-  >{{boardHeading}}</div>
-  <button 
-    class="button button--add-stack"
-    data-i-new="stack"
-  >Add stack</button>
-</div>
-<div class="board-container">
-  <div 
-    class="board"
-    data-o-key="stacks"
-    data-o-type="list"
-    data-i-sortable="stacks"
-  >
-    {{#for stack in stacks}}
-      <div 
-        class="stack"
-        data-o-type="object"
-        data-l-key-stack-heading
-        data-o-default-stack-heading="A Project"
-      >
-        <div class="stack__top">
-          <p 
-            class="stack__text"
-            data-l-target-stack-heading
-            data-i-editable
-          >{{default stack.stackHeading "New stack item"}}</p>
-          <button 
-            class="button button--plus-square"
-            data-i-new="card"
-          >
-            <img class="stack__new-icon" src="/images/new.svg">
-          </button>
-        </div>
-        <div 
-          class="stack__list"
-          data-o-key="cards"
-          data-o-type="list"
-          data-i-sortable="cards"
-        >
-          {{#for card in stack.cards}}
-            <div 
-              class="card"
-              data-o-type="object"
-              data-l-key-card-text
-              data-i-editable
-            >
-              <p 
-                class="card__text"
-                data-l-target-card-text
-              >{{default card.cardText "New card item"}}</p>
-              <img class="card__drag" src="/images/drag.svg">
-            </div>
-          {{/for}}
-        </div>
-        <div class="stack__add-card-container">
-          <button 
-            class="stack__add-card"
-            data-i-new="card"
-          >
-            <img class="stack__add-card-icon" src="/images/plus.svg"><p>Add card</p>
-          </button>
-        </div>
+<div class="dashboard">
+  <section class="projects-col">
+    <div class="projects">
+      <header class="projects__header">
+        <h2>My Projects</h2>
+        <button aria-label="Add Project">+</button>
+      </header>
+      <ul class="projects__list">
+        <li class="projects__list-item">Piano Recital</li>
+        <li class="projects__list-item">Build Island Game</li>
+        <li class="projects__list-item">Build rocking chair for grandma</li>
+        <li class="projects__list-item">Put together family cookbook</li>
+        <li class="projects__list-item">Learn the fiddle</li>
+      </ul>
+    </div>
+  </section>
+  <section class="tasks-col">
+    <div class="tasks">
+      <div class="tasks__back-btn-container">
+        <button class="btn btn--secondary tasks__back-btn">
+          <svg width="24"
+               height="24"
+               viewBox="0 0 24 24"
+               fill="none"
+               xmlns="http://www.w3.org/2000/svg"
+               class="tasks__back-arrow">
+            <path fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22.5013 11.9995C22.5013 11.8006 22.4223 11.6098 22.2817 11.4692C22.141 11.3285 21.9503 11.2495 21.7513 11.2495H4.06184L8.78234 6.53048C8.85207 6.46075 8.90739 6.37797 8.94513 6.28686C8.98286 6.19575 9.00229 6.0981 9.00229 5.99948C9.00229 5.90087 8.98286 5.80322 8.94513 5.71211C8.90739 5.621 8.85207 5.53821 8.78234 5.46848C8.71261 5.39875 8.62983 5.34344 8.53872 5.3057C8.44761 5.26796 8.34996 5.24854 8.25134 5.24854C8.15273 5.24854 8.05507 5.26796 7.96397 5.3057C7.87286 5.34344 7.79007 5.39875 7.72034 5.46848L1.72034 11.4685C1.6505 11.5382 1.59508 11.6209 1.55727 11.712C1.51946 11.8032 1.5 11.9008 1.5 11.9995C1.5 12.0981 1.51946 12.1958 1.55727 12.2869C1.59508 12.3781 1.6505 12.4608 1.72034 12.5305L7.72034 18.5305C7.79007 18.6002 7.87286 18.6555 7.96397 18.6933C8.05507 18.731 8.15273 18.7504 8.25134 18.7504C8.34996 18.7504 8.44761 18.731 8.53872 18.6933C8.62983 18.6555 8.71261 18.6002 8.78234 18.5305C8.85207 18.4608 8.90739 18.378 8.94513 18.2869C8.98286 18.1958 9.00229 18.0981 9.00229 17.9995C9.00229 17.9009 8.98286 17.8032 8.94513 17.7121C8.90739 17.621 8.85207 17.5382 8.78234 17.4685L4.06184 12.7495H21.7513C21.9503 12.7495 22.141 12.6705 22.2817 12.5298C22.4223 12.3892 22.5013 12.1984 22.5013 11.9995Z"
+                  fill="white" />
+          </svg>
+          Back to Projects
+        </button>
       </div>
-    {{/for}}
-  </div>
+      <header class="tasks__header">
+        <h2>Put together family cookbook</h2>
+        <button aria-label="Add Task Item">+</button>
+      </header>
+      <ul class="tasks__list">
+        <li class="tasks__list-item">
+          <div class="tasks__sublist-header">
+            Get Supplies
+          </div>
+          <ul class="tasks__sublist-list">
+            <li class="tasks__sublist-item">
+              Binding spine
+            </li>
+            <li class="tasks__sublist-item">
+              Bone folder
+            </li>
+            <li class="tasks__sublist-item">
+              Thick paper
+            </li>
+          </ul>
+        </li>
+        <li class="tasks__list-item tasks__list-item--checked">
+          Sketch layout on paper
+        </li>
+        <li class="tasks__list-item tasks__list-item--open">
+          <div class="tasks__sublist-header">
+            Call family members for recipes
+          </div>
+          <ul class="tasks__sublist-list">
+            <li class="tasks__sublist-item">
+              Grandma's chocolate chip cookies
+            </li>
+            <li class="tasks__sublist-item">
+              Dad's chili
+            </li>
+            <li class="tasks__sublist-item tasks__sublist-item--checked">
+              Mom's mac and cheese
+            </li>
+          </ul>
+        </li>
+        <li class="tasks-list-item">
+          Format recipes
+        </li>
+      </ul>
+
+    </div>
+  </section>
 </div>
