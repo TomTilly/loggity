@@ -1,0 +1,10 @@
+{{#if flashErrors }}
+{{#each flashErrors }}
+<div class="flash flash--error">{{ this }}</div>
+{{/each}}
+{{/if}}
+{{#if flashSuccesses }}
+{{#each flashSuccesses }}
+<div class="flash flash--success">{{ this }}</div>
+{{/each}}
+{{/if}}

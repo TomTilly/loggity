@@ -3,16 +3,7 @@
         action="/user/login"
         method="post">
     <h3 class="accounts__heading">Log in</h3>
-    {{#if flashErrors }}
-    {{#each flashErrors }}
-    <div class="flash flash--error">{{ this }}</div>
-    {{/each}}
-    {{/if}}
-    {{#if flashSuccesses }}
-    {{#each flashSuccesses }}
-    <div class="flash flash--success">{{ this }}</div>
-    {{/each}}
-    {{/if}}
+    {{> flash }}
     <div class="text-field">
       <label class="text-field__label"
              for="username">Username</label>
