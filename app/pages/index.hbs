@@ -1,19 +1,21 @@
 <div class="front-page">
-  <div class="front-page__container container">
+  <div class="front-page__container">
     <div class="front-page__left-col">
       <div class="front-page__info">
         <h2 class="front-page__heading">Minimalist Task Management</h2>
         {{#if currentUser}}
         <a class="btn btn--primary btn--lg"
-          href="/{{currentUser.details.username}}">View
+           href="/{{currentUser.details.username}}">View
           Your Projects</a>
         {{else}}
-        <a class="btn btn--primary btn--lg" href="/user/signup">Sign up</a>
+        <a class="btn btn--primary btn--lg"
+           href="/user/signup">Sign up</a>
         {{/if}}
       </div>
       <footer class="footer">
-        Made with <a href="https://remaketheweb.com" target="_blank"
-          rel="noopener noreferrer">RemakeJS</a>
+        Made with <a href="https://remaketheweb.com"
+           target="_blank"
+           rel="noopener noreferrer">RemakeJS</a>
         | <a href="#">Credits</a>
       </footer>
     </div>
