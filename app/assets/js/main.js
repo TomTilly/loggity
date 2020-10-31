@@ -1,2 +1,2 @@
 import './floating-labels.js';
-import './dashboard.js';
+import './_dashboard.js';
