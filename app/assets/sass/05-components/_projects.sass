@@ -6,3 +6,26 @@
 
 .projects__header
   margin: 0
+
+.projects__list
+  list-style: none
+  padding-left: 0
+
+.projects__list-item
+  display: flex
+  align-items: center
+  padding: 1em 0
+  border-bottom: 1px solid $grey
+  cursor: pointer
+  transition: background-color .2s linear
+
+  &:hover
+    background-color: #dedee4
+
+.projects__list-item::before
+  content: ""
+  width: 15px
+  height: 15px
+  background-color: $accent-red
+  border-radius: 100%
+  margin: 0 10px 0 15px
