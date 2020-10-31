@@ -1,16 +1,15 @@
 .dashboard
   display: flex
+  overflow: hidden
   @include for-tablet-landscape-up
 
 .projects-col
   width: 100%
   background-color: $dashboard-left-col-bg
-  padding: $vertical-spacing 0 $vertical-spacing $side-spacing
-  overflow: scroll
+  padding: $vertical-spacing $side-spacing
   flex-shrink: 0
 
   @include for-tablet-landscape-up
-    position: static
     width: 40%
 
 .tasks-col
@@ -22,6 +21,7 @@
   flex-shrink: 0
 
   @include for-tablet-landscape-up
+    transform: translateX(0)
     position: static
     width: 60%
 
