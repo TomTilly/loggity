@@ -34,10 +34,14 @@
 .dash-btn
   border-radius: 100%
   border: 0
-  background-color: #CECECE
+  background-color: $dash-btn-bg
   cursor: pointer
   line-height: 0
   padding: 6px
+  transition: background-color .2s linear
+
+.dash-btn:hover
+  background-color: $dash-btn-bg-hover
 
 .dash-btn__plus
   width: 23px
