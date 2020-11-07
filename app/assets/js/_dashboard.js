@@ -1,8 +1,8 @@
 import breakpoints from './_breakpoints.js';
 
-const backBtn = document.querySelector('.tasks__back-btn');
+const backBtn = document.querySelector('.view-projects-btn');
 const projectsCol = document.querySelector('.projects-col');
-const projectItems = document.querySelectorAll('.projects__list-item');
+const projectItems = document.querySelectorAll('.projects-col .list-item__label');
 const tabletLandscapeUpMediaQuery = window.matchMedia(breakpoints.tabletLandscapeUp);
 
 backBtn.addEventListener('click', (e) => {
