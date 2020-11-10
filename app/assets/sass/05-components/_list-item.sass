@@ -68,6 +68,28 @@
   padding: 0 5px
   cursor: pointer
   visibility: hidden
+  position: relative
+
+  &::before
+    content: attr(aria-label)
+    position: absolute
+    transform: translate(-50%, -120%)
+    top: 0
+    left: 50%
+    display: block
+    background: $light_grey
+    padding: .4em
+    width: max-content
+    visibility: hidden
+    border-radius: $border-radius
+    color: $grey
+    font-size: .8em
+    font-weight: bold
+    letter-spacing: .5px
+    border: 1px solid $grey
+
+  &:hover::before
+    visibility: visible
 
   &:hover, &:focus
     outline: none
@@ -96,7 +118,10 @@
 .list-item--has-sublist .list-item__chevron
   opacity: 1
 
-.list-item--sublist-open .list-item__chevron
+.list-item--has-sublist .list-item__chevron
+  transition: transform .2s linear
+
+.list-item--sublist-open .list-item__chevron img
   transform: rotate(180deg)
 
 .list-item__sublist
