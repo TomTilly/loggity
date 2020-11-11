@@ -16,7 +16,9 @@ function handleBlur(e) {
   }
 }
 
-textInputs.forEach(input => {
-  input.addEventListener('focus', handleFocus);
-  input.addEventListener('blur', handleBlur);
-});
+if(textInputs !== undefined && textInputs.length > 0){
+  textInputs.forEach(input => {
+    input.addEventListener('focus', handleFocus);
+    input.addEventListener('blur', handleBlur);
+  });
+}

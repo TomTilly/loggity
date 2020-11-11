@@ -221,12 +221,15 @@ export function initServiceRoutes({app}) {
             return res.status(500).json(err).end();
           } else {
             try {
-              shell.mkdir('-p', `${global.config.location.remake}/app/${appName}`);
-              shell.mkdir('-p', `${global.config.location.remake}/_remake-data/${appName}/user-app-data`);
-              shell.mkdir('-p', `${global.config.location.remake}/_remake-data/${appName}/user-details`);
-              shell.mkdir('-p', `${global.config.location.remake}/_remake/dist/app_${appName}`);
-              shell.cp('-r', `${global.config.location.tmp}/${appName}/app/*`, `${global.config.location.remake}/app/${appName}/`);
-              shell.cp('-r', `${global.config.location.tmp}/${appName}/_remake/dist/*`, `${global.config.location.remake}/_remake/dist/app_${appName}/`);
+              let remakeDirectory = global.config.location.remake;
+              let appTempDirectory = global.config.location.tmp;
+              shell.mkdir('-p', `${remakeDirectory}/app/${appName}/data/uploads`);
+              shell.mkdir('-p', `${remakeDirectory}/app/${appName}/data/database/user-app-data`);
+              shell.mkdir('-p', `${remakeDirectory}/app/${appName}/data/database/user-details`);
+              shell.mkdir('-p', `${remakeDirectory}/_remake/dist/app_${appName}`);
+              shell.cp('-r', `${appTempDirectory}/${appName}/app/*`, `${remakeDirectory}/app/${appName}/`);
+              shell.cp('-r', `${appTempDirectory}/${appName}/app/assets/*`, `${remakeDirectory}/_remake/dist/app_${appName}`);
+
               if (/[a-z0-9\/\-]\.zip$/.test(req.file.path)) {
                 shell.rm(req.file.path);
               }
@@ -293,8 +296,6 @@ export function initServiceRoutes({app}) {
  
         archive.pipe(output);
         archive.glob(path.join('app', app.name ,'/**/*'), { cwd: global.config.location.remake, absolute: false });
-        archive.glob(path.join('_remake-data', app.name ,'/**/*'), { cwd: global.config.location.remake, absolute: false });
-        archive.glob(path.join('_remake-uploads', app.name ,'/**/*'), { cwd: global.config.location.remake, absolute: false });
         archive.finalize();
       });
   })

@@ -1,0 +1,36 @@
+.dashboard {
+  display: flex;
+  overflow: hidden;
+}
+
+.projects-col {
+  width: 100%;
+  background-color: var(--dashboard-left-col-bg);
+  padding: var(--vertical-spacing) 2rem var(--vertical-spacing) var(--side-spacing);
+  flex-shrink: 0;
+}
+@media (min-width: 900px) {
+  .projects-col {
+    width: 40%;
+  }
+}
+
+.tasks-col {
+  width: 100%;
+  transform: translateX(-100%);
+  background-color: var(--dashboard-right-col-bg);
+  padding: var(--vertical-spacing) var(--side-spacing) var(--vertical-spacing) var(--side-spacing);
+  transition: transform 0.4s cubic-bezier(1, 0.01, 0.36, 0.81) 0.15s;
+  flex-shrink: 0;
+}
+@media (min-width: 900px) {
+  .tasks-col {
+    transform: translateX(0);
+    position: static;
+    width: 60%;
+  }
+}
+
+.projects-col--active + .tasks-col {
+  transform: translateX(0);
+}

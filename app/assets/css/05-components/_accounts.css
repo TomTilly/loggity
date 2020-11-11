@@ -1,0 +1,59 @@
+.accounts {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.accounts__form {
+  min-width: 300px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: var(--text-primary-light);
+  text-align: left;
+}
+
+.accounts__heading {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.accounts__forgot-link {
+  font-size: 0.8rem;
+}
+
+.text-field {
+  position: relative;
+  margin-bottom: 1em;
+  border-radius: var(--border-radius);
+  background: var(--white);
+}
+
+.text-field__input {
+  width: 100%;
+  outline: 0;
+  border: none;
+  font-size: 1rem;
+  padding: 1.1em 0.7em 1em;
+  border-radius: var(--border-radius);
+  color: var(--text-primary-dark);
+}
+
+.text-field__label {
+  position: absolute;
+  font-size: 1rem;
+  transform-origin: top left;
+  transform: translate(0, 0.8em) scale(1);
+  left: 0.7em;
+  cursor: text;
+  transition: transform 0.2s ease;
+  color: var(--text-primary-dark);
+}
+
+.text-field.active label {
+  transform: translateY(0) scale(0.7);
+}
+
+.accounts__submit {
+  padding: 0.75em 0;
+  margin-bottom: 0.3em;
+}

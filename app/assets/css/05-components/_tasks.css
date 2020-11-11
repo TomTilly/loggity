@@ -1,0 +1,14 @@
+.view-projects-btn {
+  margin-bottom: 1em;
+  padding: 0.5em 0.75em;
+}
+.view-projects-btn svg {
+  margin-right: 0.25em;
+  width: 0.75em;
+  height: 0.75em;
+}
+@media (min-width: 900px) {
+  .view-projects-btn {
+    display: none;
+  }
+}

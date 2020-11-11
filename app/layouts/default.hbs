@@ -10,10 +10,10 @@
         rel="stylesheet">
   <link rel="stylesheet"
         type="text/css"
-        href="/css/remake.css">
+        href="/assets/css/_remake.css">
   <link rel="stylesheet"
         type="text/css"
-        href="/css/main.css">
+        href="/assets/css/main.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
       <a class="logo"
          href="{{#if currentUser}}/{{currentUser.details.username}}{{else}}/{{/if}}">
         <img class="logo__image"
-             src="/images/logo.svg">
+             src="/assets/images/logo.svg">
         <span class="logo__text">Taskmin</span>
       </a>
       {{#if currentUser}}
@@ -52,9 +52,13 @@
   </main>
   {{#if isPageAuthor}}
   {{!-- Prevent loading the Remake framework if the page isn't editable --}}
-  <script src="/js/remake-init.js"></script>
+  <script src="/assets/js/vendor/Sortable.min.js"></script>
+  <script src="/assets/js/vendor/crostini.min.js"></script>
+  <script src="/remake/js/remake.min.js"></script>
+  <script src="/assets/js/remake-init.js"></script>
   {{/if}}
-  <script src="/js/main.js"></script>
+  <script src="/assets/js/main.js"
+          type="module"></script>
 </body>
 
 </html>
