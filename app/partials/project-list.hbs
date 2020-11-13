@@ -26,7 +26,9 @@
   </header>
   <ul array
       key="projects"
-      class="list__list">
+      class="list__list"
+      sortable>
+    {{#for project in projects}}
     <li object
         key:list-name="@search"
         key:list-color="@search"
@@ -36,8 +38,8 @@
         <label target:list-name="@innerText"
                target:list-color="@attr:data-color-id"
                class="list-item__label list-item__label--color-id"
-               data-color-id="red">
-          Piano Recital
+               data-color-id="{{ project.listColor }}">
+          {{ project.listName }}
         </label>
         <div class="list-item__btns-container">
           <button class="list-item__btn"
@@ -53,109 +55,6 @@
         </div>
       </div>
     </li>
-    <li object
-        key:list-name="@search"
-        key:list-color="@search"
-        class="list-item">
-      <div class="list-item__line-container"
-           tabindex="0">
-        <label target:list-name="@innerText"
-               target:list-color="@attr:data-color-id"
-               class="list-item__label list-item__label--color-id"
-               data-color-id="yellow">
-          Build Island Game
-        </label>
-        <div class="list-item__btns-container">
-          <button class="list-item__btn"
-                  aria-label="Move Project">
-            <img src="/assets/images/move.svg"
-                 alt="">
-          </button>
-          <button class="list-item__btn"
-                  aria-label="Delete Project">
-            <img src="/assets/images/trash.svg"
-                 alt="">
-          </button>
-        </div>
-      </div>
-    </li>
-    <li object
-        key:list-name="@search"
-        key:list-color="@search"
-        class="list-item">
-      <div class="list-item__line-container"
-           tabindex="0">
-        <label target:list-name="@innerText"
-               target:list-color="@attr:data-color-id"
-               class="list-item__label list-item__label--color-id"
-               data-color-id="green">
-          Build rocking chair for grandma
-        </label>
-        <div class="list-item__btns-container">
-          <button class="list-item__btn"
-                  aria-label="Move Project">
-            <img src="/assets/images/move.svg"
-                 alt="">
-          </button>
-          <button class="list-item__btn"
-                  aria-label="Delete Project">
-            <img src="/assets/images/trash.svg"
-                 alt="">
-          </button>
-        </div>
-      </div>
-    </li>
-    <li object
-        key:list-name="@search"
-        key:list-color="@search"
-        class="list-item">
-      <div class="list-item__line-container"
-           tabindex="0">
-        <label target:list-name="@innerText"
-               target:list-color="@attr:data-color-id"
-               class="list-item__label list-item__label--color-id"
-               data-color-id="blue">
-          Put together family cookbook
-        </label>
-        <div class="list-item__btns-container">
-          <button class="list-item__btn"
-                  aria-label="Move Project">
-            <img src="/assets/images/move.svg"
-                 alt="">
-          </button>
-          <button class="list-item__btn"
-                  aria-label="Delete Project">
-            <img src="/assets/images/trash.svg"
-                 alt="">
-          </button>
-        </div>
-      </div>
-    </li>
-    <li object
-        key:list-name="@search"
-        key:list-color="@search"
-        class="list-item">
-      <div class="list-item__line-container"
-           tabindex="0">
-        <label target:list-name="@innerText"
-               target:list-color="@attr:data-color-id"
-               class="list-item__label list-item__label--color-id"
-               data-color-id="orange">
-          Learn the fiddle
-        </label>
-        <div class="list-item__btns-container">
-          <button class="list-item__btn"
-                  aria-label="Move Project">
-            <img src="/assets/images/move.svg"
-                 alt="">
-          </button>
-          <button class="list-item__btn"
-                  aria-label="Delete Project">
-            <img src="/assets/images/trash.svg"
-                 alt="">
-          </button>
-        </div>
-      </div>
-    </li>
+    {{/for}}
   </ul>
 </div>
