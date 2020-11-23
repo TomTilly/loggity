@@ -26,31 +26,29 @@
   </header>
   <ul array
       key="projects"
-      class="list__list"
+      class="list__ul"
       sortable>
     {{#for project in projects}}
     <li object
-        key:list-name="@search"
-        key:list-color="@search"
+        key:project-name="@search"
+        key:project-color="@search"
+        key:id="{{ project.id }}"
+        default:project-name="Project Name"
         class="list-item">
       <div class="list-item__line-container"
            tabindex="0">
-        <label target:list-name="@innerText"
-               target:list-color="@attr:data-color-id"
+        <label target:project-name="@innerText"
+               target:project-color="@attr:data-color-id"
+               update:tab="{{ project.id }}"
                class="list-item__label list-item__label--color-id"
-               data-color-id="{{ project.listColor }}">
-          {{ project.listName }}
+               data-color-id="{{ project.projectColor }}">
+          {{ project.projectName }}
         </label>
         <div class="list-item__btns-container">
           <button class="list-item__btn"
-                  aria-label="Rename"
-                  edit:list-name>
+                  aria-label="Edit"
+                  edit:project-name>
             <img src="/assets/images/pencil-fill.svg"
-                 alt="">
-          </button>
-          <button class="list-item__btn"
-                  aria-label="Move">
-            <img src="/assets/images/move.svg"
                  alt="">
           </button>
           <button class="list-item__btn"

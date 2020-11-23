@@ -23,6 +23,7 @@ Remake.onAddItem(function (res) {
   if (!res.ajaxResponse.success) {
     crostini("Error adding new item", {type: "error"});
   }
+  processShowIfAttributes();
 });
 
 
